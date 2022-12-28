@@ -9,6 +9,10 @@
 
 A Chrome Extension for monitoring the quotes of the main currencies in the world.
 
+## Chrome Web Store
+
+- [Coins extension](https://chrome.google.com/webstore/detail/coins/meebfpmdedodccopjbkcihiecpmiljml)
+
 ## Overview
 
 <p align="center">
