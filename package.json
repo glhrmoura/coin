@@ -7,7 +7,7 @@
   "main": "index.js",
   "keywords": [],
   "scripts": {
-    "build:prod": "node ./scripts/compress-source.js"
+    "build:store": "node ./scripts/compress-source.js"
   },
   "devDependencies": {
     "adm-zip": "^0.5.10"
