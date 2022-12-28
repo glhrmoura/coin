@@ -1,0 +1,146 @@
+* {
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  margin: 0px;
+  background-color: #333333;
+}
+
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 1.5px solid #FFCC33;
+}
+
+.extension-container {
+  border-radius: 14px;
+}
+
+.main-content {
+  padding: 12px;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  background-color: #2E2E2E;
+}
+
+.header__image {
+  height: 25px;
+}
+
+.header__title {
+  margin: 0px;
+  color: #ADADAD;
+  font-size: 14px;
+  font-weight: 500;
+  margin-left: 6px;
+}
+
+.form-container {
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+}
+
+.main-content__title {
+  margin: 0px;
+  color: #ADADAD;
+  font-size: 14px;
+  font-weight: 300;
+  margin-bottom: 16px;
+}
+
+.form-input__label-container {
+  margin-bottom: 8px;
+}
+
+.form-input__label {
+  color: #ADADAD;
+  font-size: 10px;
+  font-weight: 300;
+}
+
+.form-input__select {
+  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #333333;
+  border: 1px solid #ADADAD;
+  border-radius: 4px;
+  padding: 12px 18px 12px 12px;
+  width: 200px;
+  cursor: pointer;
+  color: #FFFFFF;
+}
+
+.form-input__select-container {
+  position: relative;
+}
+
+.form-input__select-container::after {
+  content: '';
+  position: absolute;
+  border: 5px solid transparent;
+  border-top-color: #ADADAD;
+  top: 18px;
+  right: 12px;
+  pointer-events: none;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+
+.save-button {
+  background-color: #FFBC00;
+  padding: 12px;
+  border: none;
+  color: #000000;
+  width: 100px;
+  border-radius: 4px;
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+  transition: color .2s, background-color .2s;
+}
+
+.save-button:active {
+  opacity: 0.9;
+}
+
+.save-button:disabled {
+  background-color: #2E2E2E;
+  color: #8F8F8F;
+  cursor: default;
+}
+
+.switch-currencies__container {
+  margin-top: 22px;
+}
+
+.switch-currencies__button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.switch-currencies__button:active {
+  transform: scale(.9);
+}
+
+.switch-currencies__image {
+  width: 16px;
+  height: 16px;
+}
