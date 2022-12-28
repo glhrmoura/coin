@@ -1,0 +1,15 @@
+{
+  "name": "coins",
+  "version": "0.1.0",
+  "author": "Guilherme Moura <mouraggui@gmail.com>",
+  "description": "Monitoring the quotes of the main currencies in the world.",
+  "license": "MIT",
+  "main": "index.js",
+  "keywords": [],
+  "scripts": {
+    "build:prod": "node ./scripts/compress-source.js"
+  },
+  "devDependencies": {
+    "adm-zip": "^0.5.10"
+  }
+}
