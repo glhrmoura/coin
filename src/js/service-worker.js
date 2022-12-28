@@ -25,6 +25,12 @@ chrome.runtime.onInstalled.addListener(async () => {
   await fetchQuotation();
 });
 
+chrome.runtime.onStartup.addListener(async () => {
+  chrome.action.setBadgeBackgroundColor({ color: COLORS.BADGE_BACKGROUND_COLOR });
+
+  await fetchQuotation();
+});
+
 chrome.storage.onChanged.addListener(StorageUtil.getChangedStorageListener({
   quotation: fetchQuotation,
 }));
