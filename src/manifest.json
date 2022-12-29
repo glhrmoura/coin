@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Coins",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "Guilherme Moura <mouraggui@gmail.com>",
   "description": "Monitoring the quotes of the main currencies in the world.",
   "action": {
