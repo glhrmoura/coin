@@ -1,9 +1,7 @@
 <template>
-  <div>
-    <label class="text-grey-light text-[10px] font-light" for="selectTo">
-      {{ title }}
-    </label>
-  </div>
+  <label class="block text-grey-light text-[10px] font-light" for="selectTo">
+    {{ title }}
+  </label>
 </template>
 
 <script>
