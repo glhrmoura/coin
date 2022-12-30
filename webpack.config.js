@@ -2,18 +2,18 @@ const path = require('path');
 
 const webpack = require('webpack');
 
+const VueLoader = require('vue-loader');
 const ZipPlugin = require('zip-webpack-plugin');
-const { VueLoaderPlugin } = require('vue-loader');
 const CopyPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const rootPath = path.resolve(__dirname, '../');
 const isDev = process.env.NODE_ENV === 'development';
 
-const outputDirName = isDev ? 'build.dev' : 'build';
+const outputDirName = isDev ? 'build.dev' : 'build.prod/src';
 const prodPlugins = isDev ? [] : [
   new ZipPlugin({
     filename: 'coins-browser-extension.zip',
+    path: path.resolve(__dirname, 'build.prod'),
   }),
 ];
 
@@ -25,18 +25,18 @@ module.exports = {
   devtool: isDev ? 'source-map' : false,
 
   entry: {
-    popup: path.resolve(rootPath, 'src/extension/popup/index.js'),
-    'service-worker': path.resolve(rootPath, 'src/extension/background/service-worker.js'),
+    popup: path.resolve(__dirname, 'src/extension/popup/index.js'),
+    'service-worker': path.resolve(__dirname, 'src/extension/background/service-worker.js'),
   },
 
   output: {
     filename: '[name].js',
-    path: path.resolve(rootPath, outputDirName),
+    path: path.resolve(__dirname, outputDirName),
   },
 
   resolve: {
     alias: {
-      '@': path.resolve(rootPath, 'src'),
+      '@': path.resolve(__dirname, 'src'),
     },
   },
 
@@ -56,7 +56,8 @@ module.exports = {
         test: /\.css$/,
         use: [
           'vue-style-loader',
-          'css-loader'
+          'css-loader',
+          'postcss-loader',
         ],
       },
 
@@ -80,22 +81,22 @@ module.exports = {
       __VUE_PROD_DEVTOOLS__: false,
     }),
 
-    new VueLoaderPlugin(),
+    new VueLoader.VueLoaderPlugin(),
 
     new HtmlWebpackPlugin({
       filename: 'popup.html',
       chunks : ['popup'],
-      template: path.resolve(rootPath, 'src/extension/popup/templates/index.html')
+      template: path.resolve(__dirname, 'src/extension/popup/templates/index.html')
     }),
 
     new CopyPlugin({
       patterns: [
         {
-          from: path.resolve(rootPath, 'src/static'),
+          from: path.resolve(__dirname, 'src/static'),
           to: 'assets'
         },
         {
-          from: path.resolve(rootPath, 'src/manifest.json'),
+          from: path.resolve(__dirname, 'src/manifest.json'),
         },
       ],
     }),
