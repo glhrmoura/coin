@@ -5,7 +5,7 @@
   "author": "Guilherme Moura <mouraggui@gmail.com>",
   "description": "Monitoring the quotes of the main currencies in the world.",
   "action": {
-    "default_popup": "html/popup.html"
+    "default_popup": "popup.html"
   },
   "icons": {
     "16": "assets/icons/icon-16.png",
@@ -14,9 +14,7 @@
     "128": "assets/icons/icon-128.png"
   },
   "background": {
-    "type": "module",
-    "minimum_chrome_version": "92",
-    "service_worker": "js/service-worker.js"
+    "service_worker": "service-worker.js"
   },
   "permissions": ["storage"]
 }
