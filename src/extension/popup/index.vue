@@ -1,11 +1,7 @@
 <template>
   <div class="extension-container">
     <header class="header-container">
-      <img
-        alt="Coins icon"
-        class="header__image"
-        src="@/assets/images/logo.png"
-      />
+      <LogoIcon :size="24" />
 
       <h1 class="header__title">
         Coins
@@ -63,6 +59,7 @@ import { CURRENCIES } from '@/constants';
 import Button from '@/extension/popup/components/Button.vue';
 import LabelForm from '@/extension/popup/components/form/Label.vue';
 import ReloadIcon from '@/extension/popup/components/icons/Reload.vue';
+import LogoIcon from '@/extension/popup/components/icons/Logo.vue';
 import SelectForm from '@/extension/popup/components/form/Select.vue';
 
 export default {
@@ -70,6 +67,7 @@ export default {
     Button,
     LabelForm,
     ReloadIcon,
+    LogoIcon,
     SelectForm,
   },
 
