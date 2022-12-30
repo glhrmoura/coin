@@ -1,0 +1,16 @@
+* {
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  margin: 0px;
+  background-color: #333333;
+}
+
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 1.5px solid #FFCC33;
+}
