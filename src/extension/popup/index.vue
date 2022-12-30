@@ -25,7 +25,7 @@
         </div>
 
         <div class="switch-currencies__container">
-          <Button type="ghost" @click="onSwitchClick">
+          <Button type="ghost" @click="onSwitchCurrencies">
             <ReloadIcon />
           </Button>
         </div>
@@ -41,12 +41,12 @@
         </div>
       </div>
 
-      <div class="save-button__container">
+      <div class="button__container">
         <Button
           title="Save"
           type="primary"
           :disabled="loading"
-          @click="onSaveClick"
+          @click="onSaveQuotation"
         />
       </div>
     </main>
@@ -57,10 +57,10 @@
 import { CURRENCIES } from '@/constants';
 
 import Button from '@/extension/popup/components/Button.vue';
-import LabelForm from '@/extension/popup/components/form/Label.vue';
-import ReloadIcon from '@/extension/popup/components/icons/Reload.vue';
 import LogoIcon from '@/extension/popup/components/icons/Logo.vue';
+import LabelForm from '@/extension/popup/components/form/Label.vue';
 import SelectForm from '@/extension/popup/components/form/Select.vue';
+import ReloadIcon from '@/extension/popup/components/icons/Reload.vue';
 
 export default {
   components: {
@@ -117,14 +117,14 @@ export default {
       this.toOldValue = this.toValue;
     },
 
-    onSwitchClick() {
+    onSwitchCurrencies() {
       const toValue = this.toValue;
 
       this.toValue = this.fromValue;
       this.fromValue = toValue;
     },
 
-    async onSaveClick() {
+    async onSaveQuotation() {
       const quotation = {
         from: this.fromValue,
         to: this.toValue,
@@ -203,7 +203,7 @@ body {
   margin-bottom: 16px;
 }
 
-.save-button__container {
+.button__container {
   display: flex;
   justify-content: flex-end;
   margin-top: 24px;
@@ -211,21 +211,5 @@ body {
 
 .switch-currencies__container {
   margin-top: 22px;
-}
-
-.switch-currencies__button {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  transition: .2s;
-}
-
-.switch-currencies__button:active {
-  transform: scale(.9);
-}
-
-.switch-currencies__image {
-  width: 16px;
-  height: 16px;
 }
 </style>
