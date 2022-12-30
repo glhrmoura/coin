@@ -1,72 +1,72 @@
 <template>
-  <div class="app">
-    <header class="header__container">
-      <LogoIcon :size="24" />
-      
-      <Heading tag="h1" class="header__title">
-        Coins
-      </Heading>
-    </header>
+  <header class="flex items-center p-2 bg-grey-darker">
+    <LogoIcon :size="24" />
+    
+    <h1 class="text-base ml-2 text-grey-light font-semibold">
+      Coins
+    </h1>
+  </header>
 
-    <main class="main__container">
-      <Heading tag="h2" class="main__title">
-        Choose which currencies you want to monitor
-      </Heading>
+  <main class="p-3">
+    <p class="text-sm font-light text-grey-light">
+      Choose which currencies you want to monitor
+    </p>
 
-      <div class="form__container">
-        <div class="form__group">
-          <LabelForm title="From" />
+    <div class="flex items-center gap-x-3.5 mt-4">
+      <div>
+        <LabelForm title="From" class="mb-1" />
 
-          <SelectForm
-            :options="options"
-            v-model:value="fromValue"
-            @change="onSelectFromChange"
-          />
-        </div>
-
-        <div class="switch__container">
-          <Button type="ghost" @click="onSwitchCurrencies">
-            <ReloadIcon />
-          </Button>
-        </div>
-
-        <div class="form__group">
-          <LabelForm title="To" />
-
-          <SelectForm
-            :options="options"
-            v-model:value="toValue"
-            @change="onSelectToChange"
-          />
-        </div>
-      </div>
-
-      <div class="button__container">
-        <Button
-          title="Save"
-          type="primary"
-          :disabled="loading"
-          @click="onSaveQuotation"
+        <SelectForm
+          :options="options"
+          v-model:value="fromValue"
+          @change="onSelectFromChange"
         />
       </div>
-    </main>
-  </div>
+
+      <Button
+        class="mt-6"
+        type="ghost"
+        @click="onSwitchCurrencies"
+      >
+        <ReloadIcon />
+      </Button>
+
+      <div>
+        <LabelForm title="To" class="mb-1" />
+
+        <SelectForm
+          :options="options"
+          v-model:value="toValue"
+          @change="onSelectToChange"
+        />
+      </div>
+    </div>
+
+    <div class="flex justify-end mt-6">
+      <Button
+        title="Save"
+        type="primary"
+        :disabled="loading"
+        @click="onSaveQuotation"
+      />
+    </div>
+  </main>
 </template>
 
 <script>
 import { CURRENCIES } from '@/constants';
 
-import Button from '@/extension/popup/components/Button.vue';
-import Heading from '@/extension/popup/components/Heading.vue';
 import LogoIcon from '@/extension/popup/components/icons/Logo.vue';
-import LabelForm from '@/extension/popup/components/form/Label.vue';
-import SelectForm from '@/extension/popup/components/form/Select.vue';
 import ReloadIcon from '@/extension/popup/components/icons/Reload.vue';
+
+import SelectForm from '@/extension/popup/components/form/Select.vue';
+import LabelForm from '@/extension/popup/components/form/Label.vue';
+
+import Button from '@/extension/popup/components/Button.vue';
 
 export default {
   components: {
     Button,
-    Heading,
     LogoIcon,
     LabelForm,
     ReloadIcon,
@@ -146,48 +146,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.app {
-  border-radius: 14px;
-}
-
-.main__container {
-  padding: 12px;
-}
-
-.main__title {
-  font-size: 14px;
-  font-weight: 300;
-}
-
-.header__container {
-  display: flex;
-  align-items: center;
-  padding: 8px;
-  background-color: #2E2E2E;
-}
-
-.header__title {
-  font-size: 14px;
-  font-weight: 500;
-  margin-left: 6px;
-}
-
-.form__container {
-  display: flex;
-  align-items: center;
-  column-gap: 12px;
-  margin-top: 16px;
-}
-
-.button__container {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 24px;
-}
-
-.switch__container {
-  margin-top: 22px;
-}
-</style>

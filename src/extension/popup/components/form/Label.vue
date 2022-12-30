@@ -1,6 +1,6 @@
 <template>
-  <div class="form-input__label-container">
-    <label class="form-input__label" for="selectTo">
+  <div>
+    <label class="text-grey-light text-[10px] font-light" for="selectTo">
       {{ title }}
     </label>
   </div>
@@ -13,15 +13,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.form-input__label-container {
-  margin-bottom: 8px;
-}
-
-.form-input__label {
-  color: #ADADAD;
-  font-size: 10px;
-  font-weight: 300;
-}
-</style>

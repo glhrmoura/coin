@@ -1,8 +1,9 @@
 <template>
   <button
-    class="button"
-    :class="[`button--${type}`]"
     :disabled="disabled"
+    :class="[`button--${type}`]"
+    class="p-3 border-none w-[100px] rounded text-[10px] uppercase font-bold cursor-pointer 
+    transition-colors active:opacity-90"
   >
     <slot v-if="$slots.default" />
 
@@ -28,38 +29,15 @@ export default {
 </script>
 
 <style scoped>
-.button {
-  padding: 12px;
-  border: none;
-  width: 100px;
-  border-radius: 4px;
-  font-size: 10px;
-  text-transform: uppercase;
-  font-weight: 700;
-  letter-spacing: 0.4px;
-  cursor: pointer;
-  transition: color .2s, background-color .2s;
-}
-
-.button:active {
-  opacity: 0.9;
-}
-
 .button--primary {
-  color: #000000;
-  background-color: #FFBC00;
+  @apply bg-yellow-medium text-black;
 }
 
 .button--primary:disabled {
-  color: #8F8F8F;
-  cursor: default;
-  background-color: #2E2E2E;
+  @apply bg-grey-darker cursor-default text-grey-medium;
 }
 
 .button--ghost {
-  color: #FFFFFF;
-  padding: 0px;
-  width: auto;
-  background-color: transparent;
+  @apply bg-transparent w-auto p-0 text-white;
 }
 </style>

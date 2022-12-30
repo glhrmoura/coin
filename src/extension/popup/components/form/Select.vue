@@ -1,9 +1,12 @@
 <template>
-  <div class="form-input__select-container">
+  <div
+    class="relative after:content-[''] after:absolute after:border-[5px] after:border-transparent 
+    after:border-t-grey-light after:top-[18px] after:right-[12px] after:pointer-events-none"
+  >
     <select
-      tabindex="0"
       :value="value"
-      class="form-input__select"
+      class="appearance-none relative bg-grey-dark border-[1px] border-grey-light rounded
+      py-3 pl-3 pr-5 w-[200px] cursor-pointer text-white"
       @change="onChange"
     >
       <option
@@ -36,33 +39,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.form-input__select {
-  position: relative;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background-color: #333333;
-  border: 1px solid #ADADAD;
-  border-radius: 4px;
-  padding: 12px 18px 12px 12px;
-  width: 200px;
-  cursor: pointer;
-  color: #FFFFFF;
-}
-
-.form-input__select-container {
-  position: relative;
-}
-
-.form-input__select-container::after {
-  content: '';
-  position: absolute;
-  border: 5px solid transparent;
-  border-top-color: #ADADAD;
-  top: 18px;
-  right: 12px;
-  pointer-events: none;
-}
-</style>
