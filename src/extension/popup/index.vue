@@ -1,17 +1,17 @@
 <template>
-  <div class="extension-container">
-    <header class="header-container">
+  <div class="app">
+    <header class="header__container">
       <LogoIcon :size="24" />
-
-      <h1 class="header__title">
+      
+      <Heading tag="h1" class="header__title">
         Coins
-      </h1>
+      </Heading>
     </header>
 
-    <main class="main-content">
-      <h2 class="main-content__title">
+    <main class="main__container">
+      <Heading tag="h2" class="main__title">
         Choose which currencies you want to monitor
-      </h2>
+      </Heading>
 
       <div class="form__container">
         <div class="form__group">
@@ -24,7 +24,7 @@
           />
         </div>
 
-        <div class="switch-currencies__container">
+        <div class="switch__container">
           <Button type="ghost" @click="onSwitchCurrencies">
             <ReloadIcon />
           </Button>
@@ -57,6 +57,7 @@
 import { CURRENCIES } from '@/constants';
 
 import Button from '@/extension/popup/components/Button.vue';
+import Heading from '@/extension/popup/components/Heading.vue';
 import LogoIcon from '@/extension/popup/components/icons/Logo.vue';
 import LabelForm from '@/extension/popup/components/form/Label.vue';
 import SelectForm from '@/extension/popup/components/form/Select.vue';
@@ -65,9 +66,10 @@ import ReloadIcon from '@/extension/popup/components/icons/Reload.vue';
 export default {
   components: {
     Button,
+    Heading,
+    LogoIcon,
     LabelForm,
     ReloadIcon,
-    LogoIcon,
     SelectForm,
   },
 
@@ -82,8 +84,9 @@ export default {
 
   computed: {
     options() {
-      return this.currencies.map(({ title, code }) => ({ title, value: code }))
-    }
+      return this.currencies
+        .map(({ title, code }) => ({ title, value: code }));
+    },
   },
 
   async mounted() {
@@ -144,46 +147,28 @@ export default {
 };
 </script>
 
-<style>
-* {
-  font-family: 'Inter', sans-serif;
-}
-
-body {
-  margin: 0px;
-  background-color: #333333;
-}
-
-*:focus:not(:focus-visible) {
-  outline: none;
-}
-
-*:focus-visible {
-  outline: 1.5px solid #FFCC33;
-}
-
-.extension-container {
+<style scoped>
+.app {
   border-radius: 14px;
 }
 
-.main-content {
+.main__container {
   padding: 12px;
 }
 
-.header-container {
+.main__title {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.header__container {
   display: flex;
   align-items: center;
   padding: 8px;
   background-color: #2E2E2E;
 }
 
-.header__image {
-  height: 25px;
-}
-
 .header__title {
-  margin: 0px;
-  color: #ADADAD;
   font-size: 14px;
   font-weight: 500;
   margin-left: 6px;
@@ -193,14 +178,7 @@ body {
   display: flex;
   align-items: center;
   column-gap: 12px;
-}
-
-.main-content__title {
-  margin: 0px;
-  color: #ADADAD;
-  font-size: 14px;
-  font-weight: 300;
-  margin-bottom: 16px;
+  margin-top: 16px;
 }
 
 .button__container {
@@ -209,7 +187,7 @@ body {
   margin-top: 24px;
 }
 
-.switch-currencies__container {
+.switch__container {
   margin-top: 22px;
 }
 </style>
