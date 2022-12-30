@@ -18,14 +18,14 @@ A Chrome Extension for monitoring the quotes of the main currencies in the world
 <p align="center">
   <img
     style="object: contain; width: '100%'"
-    src="https://raw.githubusercontent.com/glhrmoura/coins/main/docs/screenshot_1.png"
+    src="https://raw.githubusercontent.com/glhrmoura/coins/main/docs/screenshot_badge.png"
   />
 </p>
 
 <p align="center">
   <img
     style="object: contain; width: '100%'"
-    src="https://raw.githubusercontent.com/glhrmoura/coins/main/docs/screenshot_2.png"
+    src="https://raw.githubusercontent.com/glhrmoura/coins/main/docs/screenshot_popup.png"
   />
 </p>
 
