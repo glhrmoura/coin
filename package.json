@@ -1,6 +1,6 @@
 {
   "name": "coins",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "author": "Guilherme Moura <mouraggui@gmail.com>",
   "description": "Monitoring the quotes of the main currencies in the world.",
   "license": "MIT",
