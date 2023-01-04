@@ -11,6 +11,8 @@ const fetchQuotation = async () => {
   try {
     const { bid } = await QuotationService.fetchLastQuotation(quotation);
 
+    console.log('bid', bid);
+
     chrome.action.setBadgeText({ text: CurrencyUtil.toCurrency(bid) });
   } catch (error) {
     console.log('[Error: runtime.onInstalled]', error);
@@ -39,4 +41,4 @@ chrome.storage.onChanged.addListener(StorageUtil.getChangedStorageListener({
   quotation: fetchQuotation,
 }));
 
-setInterval(fetchQuotation, 30000);
+setInterval(fetchQuotation, 20000);
