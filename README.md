@@ -5,7 +5,7 @@
   />
 </p>
 
-# 💰 Coins
+# Coins
 
 A Chrome Extension for monitoring the quotes of the main currencies in the world.
 
