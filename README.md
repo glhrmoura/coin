@@ -7,7 +7,7 @@
 
 # Coins
 
-A Chrome Extension for monitoring the quotes of the main currencies in the world.
+Chrome Extension for monitoring the quotes of the main currencies in the world.
 
 ## Chrome Web Store
 
