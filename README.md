@@ -5,15 +5,15 @@
   />
 </p>
 
-# Coins
+## Coins
 
 Chrome Extension for monitoring the quotes of the main currencies in the world.
 
-## Chrome Web Store
+### Chrome Web Store
 
 [**Coins**](https://chrome.google.com/webstore/detail/coins/meebfpmdedodccopjbkcihiecpmiljml)
 
-## Overview
+### Overview
 
 <p align="center">
   <img
@@ -29,7 +29,7 @@ Chrome Extension for monitoring the quotes of the main currencies in the world.
   />
 </p>
 
-## License
+### License
 
 [MIT](https://github.com/glhrmoura/coins/blob/main/LICENSE)
 
