@@ -7,8 +7,8 @@
 
 ## Coins
 
-[![chrome web store version](https://img.shields.io/chrome-web-store/v/meebfpmdedodccopjbkcihiecpmiljml.svg?style=for-the-badge)](https://chrome.google.com/webstore/detail/coins/meebfpmdedodccopjbkcihiecpmiljml)
-[![license](https://img.shields.io/chrome-web-store/rating/meebfpmdedodccopjbkcihiecpmiljml.svg?style=for-the-badge)](https://chrome.google.com/webstore/detail/coins/meebfpmdedodccopjbkcihiecpmiljml)
+[![Chrome Web Store Version](https://img.shields.io/chrome-web-store/v/meebfpmdedodccopjbkcihiecpmiljml.svg?style=for-the-badge)](https://chrome.google.com/webstore/detail/coins/meebfpmdedodccopjbkcihiecpmiljml)
+[![Chrome Web Store Rating](https://img.shields.io/chrome-web-store/rating/meebfpmdedodccopjbkcihiecpmiljml.svg?style=for-the-badge)](https://chrome.google.com/webstore/detail/coins/meebfpmdedodccopjbkcihiecpmiljml)
 
 Chrome Extension for monitoring the quotes of the main currencies in the world.
 
