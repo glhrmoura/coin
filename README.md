@@ -16,7 +16,7 @@ Chrome Extension for monitoring the quotes of the main currencies in the world.
 
 [**Coins**](https://chrome.google.com/webstore/detail/coins/meebfpmdedodccopjbkcihiecpmiljml)
 
-### Overview
+### Demo
 
 <p align="center">
   <img
