@@ -1,5 +1,5 @@
 {
-  "name": "coins",
+  "name": "coin",
   "version": "0.1.8",
   "author": "Guilherme Moura <mouraggui@gmail.com>",
   "description": "Monitoring the quotes of the main currencies in the world.",

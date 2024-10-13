@@ -12,7 +12,7 @@ const isDev = process.env.NODE_ENV === 'development';
 const outputDirName = isDev ? 'build.dev' : 'build.prod/src';
 const prodPlugins = isDev ? [] : [
   new ZipPlugin({
-    filename: 'coins-browser-extension.zip',
+    filename: 'coin-browser-extension.zip',
     path: path.resolve(__dirname, 'build.prod'),
   }),
 ];

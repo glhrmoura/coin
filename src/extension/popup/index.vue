@@ -3,7 +3,7 @@
     <LogoIcon :size="24" />
     
     <h1 class="text-base ml-2 text-grey-light font-semibold">
-      Coins
+      Coin
     </h1>
   </header>
 
