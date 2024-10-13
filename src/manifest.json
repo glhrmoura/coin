@@ -1,9 +1,9 @@
 {
   "manifest_version": 3,
-  "name": "Coin",
-  "version": "0.1.10",
-  "author": "Guilherme Moura <mouraggui@gmail.com>",
+  "version": "0.1.11",
+  "name": "Coin: Always be up to date",
   "description": "Monitoring the quotes of the main currencies in the world.",
+  "author": "Guilherme Moura <mouraggui@gmail.com> (https://github.com/glhrmoura)",
   "action": {
     "default_popup": "popup.html",
     "default_icon": "assets/icons/icon-16.png"
