@@ -14,7 +14,7 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, 'build.dev'),
+    path: path.resolve(__dirname, 'dist:dev'),
   },
   resolve: {
     alias: {

@@ -13,7 +13,7 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, 'build.prod/src'),
+    path: path.resolve(__dirname, 'dist:prod/src'),
   },
   resolve: {
     alias: {
@@ -74,8 +74,8 @@ module.exports = {
       ],
     }),
     new ZipPlugin({
-      filename: 'coin-browser-extension.zip',
-      path: path.resolve(__dirname, 'build.prod'),
+      filename: 'coin.zip',
+      path: path.resolve(__dirname, 'dist:prod'),
     }),
   ],
 };
