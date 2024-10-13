@@ -1,10 +1,8 @@
 {
   "name": "coin",
-  "version": "0.1.10",
   "author": "Guilherme Moura <mouraggui@gmail.com> (https://github.com/glhrmoura)",
   "description": "Monitoring the quotes of the main currencies in the world.",
   "license": "MIT",
-  "keywords": [],
   "scripts": {
     "dev": "webpack --config webpack.dev.js",
     "prod": "webpack --config webpack.prod.js"
