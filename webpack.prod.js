@@ -13,7 +13,7 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, 'dist:prod/src'),
+    path: path.resolve(__dirname, 'dist/prod/src'),
   },
   resolve: {
     alias: {
@@ -65,8 +65,8 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, 'src/static'),
-          to: 'assets'
+          from: path.resolve(__dirname, 'src/extension/assets'),
+          to: ''
         },
         {
           from: path.resolve(__dirname, 'src/manifest.json'),
@@ -75,7 +75,7 @@ module.exports = {
     }),
     new ZipPlugin({
       filename: 'coin.zip',
-      path: path.resolve(__dirname, 'dist:prod'),
+      path: path.resolve(__dirname, 'dist/prod'),
     }),
   ],
 };

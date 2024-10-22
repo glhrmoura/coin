@@ -14,7 +14,7 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, 'dist:dev'),
+    path: path.resolve(__dirname, 'dist/dev'),
   },
   resolve: {
     alias: {
@@ -66,8 +66,8 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, 'src/static'),
-          to: 'assets'
+          from: path.resolve(__dirname, 'src/extension/assets'),
+          to: ''
         },
         {
           from: path.resolve(__dirname, 'src/manifest.json'),

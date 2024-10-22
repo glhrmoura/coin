@@ -54,7 +54,7 @@
 </template>
 
 <script>
-import { CURRENCIES } from '@/constants';
+import { CURRENCIES } from '@/core/constants';
 
 import LogoIcon from '@/extension/popup/components/icons/Logo.vue';
 import ReloadIcon from '@/extension/popup/components/icons/Reload.vue';

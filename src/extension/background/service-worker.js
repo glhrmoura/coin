@@ -1,9 +1,9 @@
-import { COLORS } from '@/constants/index.js';
+import { COLORS } from '@/core/constants';
 
-import QuotationService from '@/services/quotation.js';
+import QuotationService from '@/core/services/quotation.js';
 
-import StorageUtil from '@/utils/storage.js';
-import CurrencyUtil from '@/utils/currency.js';
+import StorageUtil from '@/core/utils/storage.js';
+import CurrencyUtil from '@/core/utils/currency.js';
 
 const fetchQuotation = async () => {
   const { quotation } = await chrome.storage.local.get(['quotation']);

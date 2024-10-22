@@ -1,3 +1,2 @@
-node_modules
-dist:prod
-dist:dev
+node_modules/
+dist/
