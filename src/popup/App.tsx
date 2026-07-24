@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react'
+import { ArrowLeftRight, Check, LoaderCircle } from 'lucide-react'
 import { CURRENCIES } from '../shared/constants'
 import Button from './components/Button'
-import LabelForm from './components/form/Label'
 import SelectForm from './components/form/Select'
 import LogoIcon from './components/icons/Logo'
-import ReloadIcon from './components/icons/Reload'
 
 const options = CURRENCIES.map(({ title, code }) => ({ title, value: code }))
 
@@ -14,6 +13,7 @@ const App = () => {
   const [toValue, setToValue] = useState('')
   const [toOldValue, setToOldValue] = useState('')
   const [loading, setLoading] = useState(false)
+  const [saved, setSaved] = useState(false)
 
   useEffect(() => {
     const loadQuotation = async () => {
@@ -36,6 +36,7 @@ const App = () => {
   }, [])
 
   const onSelectFromChange = (value: string) => {
+    setSaved(false)
     setFromValue(value)
 
     if (value !== toValue) {
@@ -48,6 +49,7 @@ const App = () => {
   }
 
   const onSelectToChange = (value: string) => {
+    setSaved(false)
     setToValue(value)
 
     if (value !== fromValue) {
@@ -60,6 +62,7 @@ const App = () => {
   }
 
   const onSwitchCurrencies = () => {
+    setSaved(false)
     setFromValue(toValue)
     setToValue(fromValue)
   }
@@ -72,63 +75,73 @@ const App = () => {
 
     try {
       setLoading(true)
+      setSaved(false)
       await chrome.storage.local.set({ quotation })
+      setSaved(true)
     } catch (error) {
       console.log('[Error: saveButton.addEventListener]', error)
     } finally {
-      setTimeout(() => setLoading(false), 1000)
+      setTimeout(() => setLoading(false), 600)
     }
   }
 
   return (
-    <>
-      <header className="flex items-center p-2 bg-grey-darker">
-        <LogoIcon size={24} />
-
-        <h1 className="text-base ml-2 text-grey-light font-semibold">Coin</h1>
+    <div className="w-[320px] overflow-hidden bg-grey-darker text-white">
+      <header className="flex items-center gap-2.5 border-b border-grey-border px-4 py-3">
+        <LogoIcon size={28} />
+        <div className="min-w-0">
+          <h1 className="text-sm font-semibold tracking-tight text-white">
+            Coin
+          </h1>
+          <p className="text-[11px] font-medium text-grey-light">
+            Currency monitor
+          </p>
+        </div>
       </header>
 
-      <main className="p-3">
-        <p className="text-sm font-light text-grey-light">
+      <main className="flex flex-col gap-4 p-4">
+        <p className="text-sm font-medium text-grey-light">
           Choose which currencies you want to monitor
         </p>
 
-        <div className="flex items-center gap-x-3.5 mt-4">
-          <div>
-            <LabelForm title="From" className="mb-1" />
+        <div className="flex flex-col gap-3">
+          <SelectForm
+            id="currency-from"
+            label="From"
+            options={options}
+            value={fromValue}
+            onChange={onSelectFromChange}
+          />
 
-            <SelectForm
-              options={options}
-              value={fromValue}
-              onChange={onSelectFromChange}
-            />
+          <div className="flex justify-center">
+            <Button
+              variant="icon"
+              aria-label="Switch currencies"
+              onClick={onSwitchCurrencies}
+            >
+              <ArrowLeftRight size={16} strokeWidth={2} />
+            </Button>
           </div>
 
-          <Button className="mt-6" type="ghost" onClick={onSwitchCurrencies}>
-            <ReloadIcon />
-          </Button>
-
-          <div>
-            <LabelForm title="To" className="mb-1" />
-
-            <SelectForm
-              options={options}
-              value={toValue}
-              onChange={onSelectToChange}
-            />
-          </div>
-        </div>
-
-        <div className="flex justify-end mt-6">
-          <Button
-            title="Save"
-            type="primary"
-            disabled={loading}
-            onClick={onSaveQuotation}
+          <SelectForm
+            id="currency-to"
+            label="To"
+            options={options}
+            value={toValue}
+            onChange={onSelectToChange}
           />
         </div>
+
+        <Button disabled={loading} onClick={onSaveQuotation}>
+          {loading ? (
+            <LoaderCircle size={16} strokeWidth={2.25} className="animate-spin" />
+          ) : saved ? (
+            <Check size={16} strokeWidth={2.25} />
+          ) : null}
+          <span>{loading ? 'Saving' : saved ? 'Saved' : 'Save'}</span>
+        </Button>
       </main>
-    </>
+    </div>
   )
 }
 
