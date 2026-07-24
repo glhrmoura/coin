@@ -1,22 +1,39 @@
 @import 'tailwindcss';
+@import '@fontsource/lexend/400.css';
+@import '@fontsource/lexend/500.css';
+@import '@fontsource/lexend/600.css';
+@import '@fontsource/lexend/700.css';
 
 @theme {
   --color-white: #ffffff;
   --color-black: #000000;
   --color-transparent: transparent;
   --color-yellow-medium: #ffbc00;
+  --color-yellow-soft: #ffd24d;
   --color-grey-light: #adadad;
   --color-grey-medium: #8f8f8f;
-  --color-grey-dark: #333333;
-  --color-grey-darker: #2e2e2e;
-  --font-sans: 'Inter', sans-serif;
+  --color-grey-dark: #2a2a2a;
+  --color-grey-darker: #1f1f1f;
+  --color-grey-border: #3d3d3d;
+  --font-sans: 'Lexend', system-ui, sans-serif;
 }
 
 * {
-  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
 }
 
+html,
 body {
   margin: 0;
-  background-color: var(--color-grey-dark);
+  min-width: 320px;
+  background: var(--color-grey-darker);
+  color: var(--color-white);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+select,
+input {
+  font-family: inherit;
 }
