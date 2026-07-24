@@ -2,19 +2,21 @@ import type { ButtonHTMLAttributes, ReactNode } from 'react'
 
 type ButtonProps = {
   title?: string
-  type?: 'primary' | 'ghost'
+  variant?: 'primary' | 'ghost' | 'icon'
   children?: ReactNode
 } & Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'type'>
 
-const typeClassName = {
+const variantClassName = {
   primary:
-    'bg-yellow-medium text-black disabled:bg-grey-darker disabled:cursor-default disabled:text-grey-medium',
-  ghost: 'bg-transparent w-auto p-0 text-white',
+    'h-11 w-full justify-center gap-2 rounded-xl bg-yellow-medium px-4 text-sm font-semibold text-black transition hover:bg-yellow-soft disabled:cursor-not-allowed disabled:bg-grey-border disabled:text-grey-medium',
+  ghost:
+    'h-11 w-auto justify-center gap-2 rounded-xl border border-grey-border bg-transparent px-4 text-sm font-semibold text-white transition hover:bg-white/5',
+  icon: 'flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-grey-border bg-grey-dark text-grey-light transition hover:border-yellow-medium/50 hover:bg-grey-border hover:text-yellow-medium',
 }
 
 const Button = ({
   title,
-  type = 'primary',
+  variant = 'primary',
   disabled,
   className = '',
   children,
@@ -23,7 +25,7 @@ const Button = ({
   return (
     <button
       disabled={disabled}
-      className={`p-3 border-none w-[100px] rounded text-[10px] uppercase font-bold cursor-pointer transition-colors active:opacity-90 ${typeClassName[type]} ${className}`}
+      className={`inline-flex cursor-pointer items-center border-none outline-none ${variantClassName[variant]} ${className}`}
       {...props}
     >
       {children ?? (title ? <span>{title}</span> : null)}
