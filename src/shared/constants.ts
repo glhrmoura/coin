@@ -1,6 +1,6 @@
 export const COLORS = {
   BADGE_BACKGROUND_COLOR: '#186200',
-};
+}
 
 export const CURRENCIES = [
   { code: 'USD', title: 'United States Dollar' },
@@ -49,4 +49,11 @@ export const CURRENCIES = [
   { code: 'XCD', title: 'East Caribbean Dollar' },
   { code: 'XOF', title: 'West African CFA franc' },
   { code: 'ZAR', title: 'South African Rand' },
-];
+] as const
+
+export type CurrencyCode = (typeof CURRENCIES)[number]['code']
+
+export type QuotationPair = {
+  from: string
+  to: string
+}
