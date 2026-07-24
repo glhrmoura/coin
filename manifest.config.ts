@@ -1,8 +1,9 @@
 import { defineManifest } from '@crxjs/vite-plugin'
+import packageJson from './package.json' with { type: 'json' }
 
 export default defineManifest({
   manifest_version: 3,
-  version: '0.1.11',
+  version: packageJson.version,
   name: 'Coin: Always be up to date',
   description: 'Monitoring the quotes of the main currencies in the world.',
   author: {
