@@ -1,17 +1,21 @@
 {
   "name": "coin",
   "private": true,
-  "version": "0.1.11",
+  "version": "0.1.12",
   "type": "module",
   "author": "Guilherme Moura <mouraggui@gmail.com> (https://github.com/glhrmoura)",
   "description": "Monitoring the quotes of the main currencies in the world.",
   "license": "MIT",
   "scripts": {
     "dev": "vite",
-    "build": "tsc --noEmit && vite build",
+    "bump": "node scripts/bump-version.mjs",
+    "build": "tsc --noEmit && yarn bump && vite build && yarn zip",
+    "zip": "mkdir -p dist.webstore && rm -f dist.webstore/coin.zip && cd dist && zip -r ../dist.webstore/coin.zip .",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/lexend": "^5.3.0",
+    "lucide-react": "^0.525.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
