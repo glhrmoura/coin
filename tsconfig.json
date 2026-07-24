@@ -17,7 +17,8 @@
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
+    "resolveJsonModule": true,
     "types": ["chrome"]
   },
-  "include": ["src", "vite.config.ts", "manifest.config.ts"]
+  "include": ["src", "vite.config.ts", "manifest.config.ts", "package.json"]
 }
