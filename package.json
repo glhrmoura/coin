@@ -9,8 +9,8 @@
   "scripts": {
     "dev": "vite",
     "bump": "node scripts/bump-version.mjs",
-    "build": "tsc --noEmit && yarn bump && vite build && yarn zip",
-    "zip": "mkdir -p dist.webstore && rm -f dist.webstore/coin.zip && cd dist && zip -r ../dist.webstore/coin.zip .",
+    "build": "yarn bump && yarn zip",
+    "zip": "tsc --noEmit && vite build && mkdir -p dist.webstore && rm -f dist.webstore/coin.zip && cd dist && zip -r ../dist.webstore/coin.zip .",
     "preview": "vite preview"
   },
   "dependencies": {
