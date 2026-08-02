@@ -21,10 +21,10 @@ const SelectForm = ({
   onChange,
 }: SelectFormProps) => {
   return (
-    <div className="relative rounded-xl border border-grey-border bg-grey-dark transition focus-within:border-yellow-medium/60">
+    <div className="relative cursor-pointer rounded-2xl border border-white/10 bg-grey-dark transition focus-within:border-yellow-medium/50">
       <label
         htmlFor={id}
-        className="pointer-events-none absolute top-2 left-3 z-10 text-[10px] font-medium tracking-[0.14em] text-grey-light uppercase"
+        className="pointer-events-none absolute top-2.5 left-3.5 z-10 text-[10px] font-medium tracking-[0.16em] text-grey-light uppercase"
       >
         {label}
       </label>
@@ -32,7 +32,7 @@ const SelectForm = ({
       <select
         id={id}
         value={value}
-        className="h-14 w-full cursor-pointer appearance-none rounded-xl border-none bg-transparent pt-5 pr-10 pb-2 pl-3 text-sm font-medium text-white outline-none"
+        className="h-[58px] w-full cursor-pointer appearance-none rounded-2xl border-none bg-transparent pt-5 pr-10 pb-2.5 pl-3.5 text-[13px] font-semibold text-white outline-none"
         onChange={(event) => onChange(event.target.value)}
       >
         {options.map((option) => (
@@ -45,7 +45,7 @@ const SelectForm = ({
       <ChevronDown
         size={16}
         strokeWidth={2}
-        className="pointer-events-none absolute top-1/2 right-3 -translate-y-1/2 text-grey-light"
+        className="pointer-events-none absolute top-1/2 right-3.5 -translate-y-1/2 text-grey-light"
       />
     </div>
   )
